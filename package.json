@@ -1,0 +1,115 @@
+{
+  "name": "string-manipulation",
+	"displayName": "String Manipulation",
+	"description": "Do what ever you want with your text.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "onCommand:string-manipulation.reverse",
+		"onCommand:string-manipulation.countChars",
+		"onCommand:string-manipulation.base64encode",
+		"onCommand:string-manipulation.base64decode",
+		"onCommand:string-manipulation.casingToLower",
+		"onCommand:string-manipulation.casingToUpper",
+		"onCommand:string-manipulation.casingInvert",
+		"onCommand:string-manipulation.removeSpaces",
+		"onCommand:string-manipulation.removeMultipleSpaces",
+		"onCommand:string-manipulation.removeNewLines",
+		"onCommand:string-manipulation.removeMultipleNewLines",
+		"onCommand:string-manipulation.toMd5",
+		"string-manipulation.sortByLengthDesc",
+		"string-manipulation.sortByLengthAsc",
+		"string-manipulation.toHex"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "string-manipulation.reverse",
+				"title": "String: Reverse"
+			},
+			{
+				"command": "string-manipulation.countChars",
+				"title": "String: Count chars"
+			},
+			{
+				"command": "string-manipulation.base64encode",
+				"title": "String: To Base64"
+			},
+			{
+				"command": "string-manipulation.base64decode",
+				"title": "String: From Base64"
+			},
+			{
+				"command": "string-manipulation.casingToLower",
+				"title": "String: To Lower"
+			},
+			{
+				"command": "string-manipulation.casingToUpper",
+				"title": "String: To Upper"
+			},
+			{
+				"command": "string-manipulation.casingInvert",
+				"title": "String: Invert casing"
+			},
+			{
+				"command": "string-manipulation.removeSpaces",
+				"title": "String: Remove spaces"
+			},
+			{
+				"command": "string-manipulation.removeMultipleSpaces",
+				"title": "String: Remove spaces"
+			},
+			{
+				"command": "string-manipulation.removeNewLines",
+				"title": "String: Remove line breaks"
+			},
+			{
+				"command": "string-manipulation.removeMultipleNewLines",
+				"title": "String: Remove multiple line breaks"
+			},
+			{
+				"command": "string-manipulation.toMd5",
+				"title": "String: Calculate MD5"
+			},
+			{
+				"command": "string-manipulation.sortByLengthDesc",
+				"title": "String: Sort by Length (DESC)"
+			},
+			{
+				"command": "string-manipulation.sortByLengthAsc",
+				"title": "String: Sort by Length (ASC)"
+			},
+			{
+				"command": "string-manipulation.toHex",
+				"title": "String: To Hex"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.61.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^4.31.1",
+		"@typescript-eslint/parser": "^4.31.1",
+		"eslint": "^7.32.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.1",
+		"typescript": "^4.4.3",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
