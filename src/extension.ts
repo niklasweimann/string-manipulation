@@ -1,10 +1,6 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import { Md5 } from "./md5";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   function registerComand(commandName: string, action: (s: string) => string) {
     context.subscriptions.push(
@@ -20,23 +16,24 @@ export function activate(context: vscode.ExtensionContext) {
       return;
     }
     const document = editor.document;
-    const selection = editor.selection;
-    if (editor.selection.isEmpty) {
-      const documentText = document.getText();
-      const result = action(documentText);
-      const fullRange = new vscode.Range(
-        document.positionAt(0),
-        document.positionAt(document.getText().length - 1)
-      );
-      editor.edit((editBuilder) => {
-        editBuilder.replace(fullRange, result);
-      });
-    } else {
-      const selectedText = document.getText(selection);
-      const result = action(selectedText);
-      editor.edit((editBuilder) => {
-        editBuilder.replace(selection, result);
-      });
+    for (const selection of editor.selections) {
+      if (selection.isEmpty) {
+        const documentText = document.getText();
+        const result = action(documentText);
+        const fullRange = new vscode.Range(
+          document.positionAt(0),
+          document.positionAt(document.getText().length - 1)
+        );
+        editor.edit((editBuilder) => {
+          editBuilder.replace(fullRange, result);
+        });
+      } else {
+        const selectedText = document.getText(selection);
+        const result = action(selectedText);
+        editor.edit((editBuilder) => {
+          editBuilder.replace(selection, result);
+        });
+      }
     }
   }
 

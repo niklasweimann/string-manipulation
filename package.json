@@ -24,9 +24,9 @@
     "onCommand:string-manipulation.removeNewLines",
     "onCommand:string-manipulation.removeMultipleNewLines",
     "onCommand:string-manipulation.toMd5",
-    "string-manipulation.sortByLengthDesc",
-    "string-manipulation.sortByLengthAsc",
-    "string-manipulation.toHex"
+    "onCommand:string-manipulation.sortByLengthDesc",
+    "onCommand:string-manipulation.sortByLengthAsc",
+    "onCommand:string-manipulation.toHex"
   ],
   "main": "./out/extension.js",
   "contributes": {
