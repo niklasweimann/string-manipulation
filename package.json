@@ -12,21 +12,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:string-manipulation.reverse",
-    "onCommand:string-manipulation.countChars",
-    "onCommand:string-manipulation.base64encode",
-    "onCommand:string-manipulation.base64decode",
-    "onCommand:string-manipulation.casingToLower",
-    "onCommand:string-manipulation.casingToUpper",
-    "onCommand:string-manipulation.casingInvert",
-    "onCommand:string-manipulation.removeSpaces",
-    "onCommand:string-manipulation.removeMultipleSpaces",
-    "onCommand:string-manipulation.removeNewLines",
-    "onCommand:string-manipulation.removeMultipleNewLines",
-    "onCommand:string-manipulation.toMd5",
-    "onCommand:string-manipulation.sortByLengthDesc",
-    "onCommand:string-manipulation.sortByLengthAsc",
-    "onCommand:string-manipulation.toHex"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -90,6 +76,10 @@
       {
         "command": "string-manipulation.toHex",
         "title": "String: To Hex"
+      },
+      {
+        "command": "string-manipulation.changeCasing",
+        "title": "String: Change casing"
       }
     ]
   },
